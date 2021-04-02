@@ -1,0 +1,13 @@
+name: macOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+
+jobs:
+  ci:
+    runs-on: macos-latest
+    steps:
+      - run: curl -o- https://raw.githubusercontent.com/SoraJin424/dotfiles/master/install/macOS.zsh | zsh
