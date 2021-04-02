@@ -76,7 +76,7 @@ install_packages() {
 clone-repo() {
     echo "[1;34m▓▒░[0m Cloning [1;36mSoraJin424/dotfiles[0m from [1;33mGithub.com [0mat [1;35m${HOME}[0m"
     
-    git clone https://github.com/SoraJin424/dotfiles.git
+    git clone https://github.com/SoraJin424/dotfiles.git ${HOME}/dotfiles
 
     cd ./dotfiles
     rm -rf .git
@@ -92,8 +92,8 @@ install-nodejs() {
         curl -o- https://cdn.jsdelivr.net/gh/creationix/nvm/install.sh | bash
 
         export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
         
         echo "[1;34m▓▒░[0m NVM succesfully installed, version is [1;32m$(nvm --version)[0m"
     }
