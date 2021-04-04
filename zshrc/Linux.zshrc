@@ -2,8 +2,8 @@
  # @Author: Jin
  # @Date: 2021-03-30 16:21:48
  # @LastEditors: Jin
- # @LastEditTime: 2021-03-31 14:50:53
- # @FilePath: /dotfiles/zsh/Linux.zshrc
+ # @LastEditTime: 2021-04-04 23:35:46
+ # @FilePath: /dotfiles/zshrc/Linux.zshrc
 ### 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -58,6 +58,7 @@ export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE="on"
 
 alias vi="vim"
+alias cls="clear"
 alias rmrf="rm -rf"
 alias gitcm="git commit -m"
 alias gitp="git push"
