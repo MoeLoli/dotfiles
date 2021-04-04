@@ -2,8 +2,8 @@
  # @Author: Jin
  # @Date: 2021-03-30 16:21:48
  # @LastEditors: Jin
- # @LastEditTime: 2021-03-31 14:42:40
- # @FilePath: /dotfiles/zsh/macOS.zshrc
+ # @LastEditTime: 2021-04-04 23:49:34
+ # @FilePath: /dotfiles/zshrc/macOS.zshrc
 ### 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -55,12 +55,18 @@ export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE="on"
 
 alias vi="vim"
+alias cls="clear"
 alias rmrf="rm -rf"
 alias gitcm="git commit -m"
 alias gitp="git push"
 alias gita="git add -a"
 alias gitall="git add ."
 alias rezsh="source $HOME/.zshrc"
+
+alias ls="gls -F --color"
+alias l="gls -lAh --color"
+alias ll="gls -l --color"
+alias la="gls -A --color"
 
 clear_dns_cache() {
     sudo dscacheutil -flushcache

@@ -35,6 +35,7 @@ install_packages() {
         unrar
         telnet
         jq
+        coreutils
     )
 
     __casks_to_be_installed=(
