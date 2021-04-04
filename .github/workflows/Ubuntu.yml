@@ -9,4 +9,4 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     steps:
-      - run: curl -o- https://raw.githubusercontent.com/SoraJin424/dotfiles/master/install/Linux.sh | bash
+      - run: curl -o- https://raw.githubusercontent.com/SoraJin424/dotfiles/master/install/Ubuntu.sh | bash
