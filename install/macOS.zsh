@@ -39,15 +39,15 @@ install_packages() {
     )
 
     __casks_to_be_installed=(
-        iina
-        maczip
-        typora
-        google-chrome
-        firefox
-        motrix
-        visual-studio-code
-        neteasemusic
-        switchhosts
+        # iina
+        # maczip
+        # typora
+        # google-chrome
+        # firefox
+        # motrix
+        # visual-studio-code
+        # neteasemusic
+        # switchhosts
     )
 
     __taps_to_be_installed=(
@@ -87,24 +87,10 @@ install-nodejs() {
     echo "[1;34m▓▒░[0m Setting up [1;36mNodeJS[0m Environment[0m"
 
 
-    install-nvm() {
-        echo "[34m▓▒░[0m Install[1;34m ${__pkg}[0m"
-
-        curl -o- https://cdn.jsdelivr.net/gh/creationix/nvm/install.sh | bash
-
-        export NVM_DIR="$HOME/.nvm"
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-        
-        echo "[1;34m▓▒░[0m NVM succesfully installed, version is [1;32m$(nvm --version)[0m"
-    }
-
     install-node() {
-        echo "[34m▓▒░[0m Install[1;34m NodeJS LTS[0m"
+        echo "[34m▓▒░[0m Install[1;34m NodeJS [0m"
         
-        nvm install --lts
-        nvm use --lts
-        nvm alias default node
+        brew install nodejs
         
         echo "[1;34m▓▒░[0m Node.js succesfully installed, version is [1;32m$(node -v)[0m"
     }
@@ -116,6 +102,9 @@ install-nodejs() {
         
         echo "[1;34m▓▒░[0m Yarn succesfully installed, version is [1;32m$(yarn --version)[0m"
     }
+
+    install-node
+    install-yarn
 }
 
 install-goenv() {

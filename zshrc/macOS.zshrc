@@ -30,10 +30,6 @@ zinit load zdharma/history-search-multi-word
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
 export LESSCHARSET="utf-8"
-export NVM_SYMLINK_CURRENT="true"
-export NVM_DIR="$HOME/.nvm"
-export NVM_LAZY_LOAD="true"
-zinit light lukechilds/zsh-nvm
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -49,8 +45,10 @@ else
 fi
 
 export PATH="/usr/local/sbin:$PATH"
+export YARNPATH="$HOME/.yarn"
+export PATH="$YARNPATH/bin:$PATH"
 export GOENV_ROOT="$HOME/.goenv"
-export GOPATH="$HOME/Go"
+export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH"
 export GO111MODULE="on"
 
@@ -102,25 +100,4 @@ Done!
 killport() {
   echo "Killing process on port: $1"
   fuser -n tcp -k $1;
-}
-
-extract() {
-    if [[ -f $1 ]]; then
-        case $1 in
-        *.tar.bz2) tar xjf $1 ;;
-        *.tar.gz) tar xzf $1 ;;
-        *.bz2) bunzip2 $1 ;;
-        *.rar) unrar e $1 ;;
-        *.gz) gunzip $1 ;;
-        *.tar) tar xf $1 ;;
-        *.tbz2) tar xjf $1 ;;
-        *.tgz) tar xzf $1 ;;
-        *.zip) unzip "$1" ;;
-        *.Z) uncompress $1 ;;
-        *.7z) 7z x $1 ;;
-        *) echo "'$1' cannot be extracted via extract()" ;;
-        esac
-    else
-        echo "'$1' is not a valid file"
-    fi
 }
